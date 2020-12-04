@@ -16,9 +16,11 @@ const utils = require('../utils/util');
                 treesCnt ++ ;
         }
         
+        //Move Right
         currentPosition += 3;
-        if( currentPosition >= lineLen )
-            currentPosition = currentPosition - lineLen;     
+
+        //Repeat if needed
+        currentPosition %= lineLen
     }
     console.log(treesCnt);
 })()

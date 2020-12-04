@@ -33,10 +33,11 @@ const utils = require('../utils/util');
                 treesCnt ++ ;  
             }
             
+            //Move Right
             currentPosition += right;
-            if( currentPosition >= lineLen )
-                currentPosition = currentPosition - lineLen;
-            
+
+            //Repeat if needed
+            currentPosition %= lineLen
         }
 
         product = product * treesCnt
