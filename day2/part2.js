@@ -1,8 +1,8 @@
 const utils = require('../utils/util');
 
 
-(async function checkForValidPasswords() {
-    const input = await utils.readFile('./passwordInput.txt');
+( function checkForValidPasswords() {
+    const input =  utils.readFile('./passwordInput.txt');
 
     let validPasswordCnt = 0 ;
     input.forEach((eachInput) => {
@@ -16,19 +16,10 @@ const utils = require('../utils/util');
         const firstPosLetter = password[firstPosition - 1];
         const secPosLetter = password[secPosition - 1]
 
-        let charCnt = 0;
-        if( firstPosLetter === letter){
+        if( (firstPosLetter === letter) !== (secPosLetter === letter) ){
             charCnt += 1;
-        }
-
-        if( secPosLetter === letter){
-            charCnt += 1;
-        }
-
-        if( charCnt === 1) {
             validPasswordCnt += 1
         }
-        
     })
     console.log(validPasswordCnt);
     return validPasswordCnt;

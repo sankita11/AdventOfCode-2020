@@ -13,8 +13,8 @@ const utils = require('../utils/util');
         const password    = inputContent[4];
 
         const re = new RegExp(letter,"g");
-        const isValid = password.match(re)
-        let charCount = isValid ? isValid.length : 0;
+        const matchedChar = password.match(re)
+        let charCount = matchedChar ? matchedChar.length : 0;
 
         if( charCount >= lowerLimit && charCount <= higherLimit) {
             validPasswordCnt += 1
