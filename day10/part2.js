@@ -5,7 +5,7 @@ console.log(cnt)
 
 function findConbimations() {
 
-    const input = util.readFile('input.txt');
+    const input = util.readFile('inputTest.txt');
 
     //Convert each input from string to integer and sort the array in ascending order
     const typedInput = input.map( eachInput => parseInt(eachInput)).sort((a,b) => a - b);
@@ -17,8 +17,8 @@ function findConbimations() {
     let combinationCnt = 1
     ranges.forEach((eachRange) => {
         combinationCnt *= fibonacci(eachRange.length - 1)
-    })
-    
+    })    
+
     return combinationCnt
 
 }
